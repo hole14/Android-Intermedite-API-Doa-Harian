@@ -47,7 +47,7 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
 
     //loopJ
-//    implementation(libs.android.async.http)
+    implementation(libs.android.async.http)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
