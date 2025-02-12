@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onFailure(
-                statusCode: Int, headers: Array<out Header>?, responseBody: ByteArray?, error: Throwable?
+                statusCode: Int, headers: Array<out Header>?, responseBody: ByteArray?, error: Throwable
             ) {
                 binding.progressBar.visibility = View.INVISIBLE
 
@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
                     401 -> "$statusCode : Bad Request"
                     403 -> "$statusCode : Forbidden"
                     404 -> "$statusCode : Not Found"
-                    else -> "$statusCode : ${error?.message}"
+                    else -> "$statusCode : ${error.message}"
                 }
                 Toast.makeText(this@MainActivity, errorMessage, Toast.LENGTH_SHORT).show()
             }
