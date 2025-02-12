@@ -33,31 +33,25 @@
         app:layout_editor_absoluteX="16dp"/>
 
     <TextView
-        android:id="@+id/tv_judul"
+        android:id="@+id/tv_latin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/judul"
+        android:text="@string/latin"
         android:layout_margin="16dp"
-        android:textSize="18sp"
+        android:textSize="14sp"
         android:textStyle="bold"
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/tv_ayat" />
 
     <TextView
-        android:id="@+id/tv_judul"
+        android:id="@+id/tv_arti"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/judul"
+        android:text="@string/arti"
         android:layout_margin="16dp"
-        android:textSize="18sp"
-        android:textStyle="bold"
+        android:textSize="14sp"
+        android:textStyle="italic"
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/tv_latin"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
