@@ -47,7 +47,7 @@ class ListDoaActivity : AppCompatActivity() {
             ) {
                 binding.progressBar.visibility = View.INVISIBLE
 
-                val listDoa = ArrayList<String>()
+                val listDoa = ArrayList<KumpulanDoa>()
                 val result = String(responseBody)
                 Log.d(TAG, result)
 
@@ -56,7 +56,12 @@ class ListDoaActivity : AppCompatActivity() {
                     for (i in 0 until jsonArray.length()){
                         val jsonObject = jsonArray.getJSONObject(i)
                         val doa = jsonObject.getString("doa")
-                        listDoa.add(doa)
+                        val ayat = jsonObject.getString("ayat")
+                        val latin = jsonObject.getString("latin")
+                        val arti = jsonObject.getString("artinya")
+
+                        val doaItem = KumpulanDoa(doa, ayat, latin, arti)
+                        listDoa.add(doaItem)
                     }
                     val adapter= DoaAdapter(listDoa)
                     binding.rcListDoa.adapter = adapter
