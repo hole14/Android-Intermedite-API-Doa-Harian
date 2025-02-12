@@ -12,6 +12,7 @@ import com.example.apidoa.databinding.ActivityMainBinding
 import com.loopj.android.http.AsyncHttpClient
 import com.loopj.android.http.AsyncHttpResponseHandler
 import cz.msebera.android.httpclient.Header
+import org.json.JSONArray
 import org.json.JSONObject
 
 class MainActivity : AppCompatActivity() {
@@ -40,15 +41,23 @@ class MainActivity : AppCompatActivity() {
                 statusCode: Int, headers: Array<out Header>, responseBody: ByteArray
             ) {
                 binding.progressBar.visibility = View.INVISIBLE
+
+
+
+
                 val result = String(responseBody)
                 Log.d(TAG, result)
                 try{
-                    val responObject = JSONObject(result)
+                    val jsonArray = JSONArray(result)
+                    val responObject = jsonArray.getJSONObject(0)
 
-                    val judul = responObject.getString("judul")
+                    //Klo langsung Object
+//                    val jsonObject = JSONObject(result)
+
+                    val judul = responObject.getString("doa")
                     val ayat = responObject.getString("ayat")
                     val latin = responObject.getString("latin")
-                    val arti = responObject.getString("arti")
+                    val arti = responObject.getString("artinya")
 
                     binding.tvJudul.text = judul
                     binding.tvAyat.text = ayat
