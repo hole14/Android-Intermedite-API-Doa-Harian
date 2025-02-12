@@ -8,6 +8,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.apidoa.databinding.ActivityMainBinding
 import com.loopj.android.http.AsyncHttpClient
+import com.loopj.android.http.AsyncHttpResponseHandler
+import cz.msebera.android.httpclient.Header
 
 class MainActivity : AppCompatActivity() {
     companion object{
@@ -29,5 +31,25 @@ class MainActivity : AppCompatActivity() {
 
         val client = AsyncHttpClient()
         val url = "https://doa-doa-api-ahmadramadhan.fly.dev/api/doa/v1/random"
+
+        client.get(url, object : AsyncHttpResponseHandler() {
+            override fun onSuccess(
+                statusCode: Int,
+                headers: Array<out Header>?,
+                responseBody: ByteArray?
+            ) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onFailure(
+                statusCode: Int,
+                headers: Array<out Header>?,
+                responseBody: ByteArray?,
+                error: Throwable?
+            ) {
+                TODO("Not yet implemented")
+            }
+
+        })
     }
 }
