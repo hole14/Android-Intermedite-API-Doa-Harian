@@ -47,9 +47,6 @@ class MainActivity : AppCompatActivity() {
             ) {
                 binding.progressBar.visibility = View.INVISIBLE
 
-
-
-
                 val result = String(responseBody)
                 Log.d(TAG, result)
                 try{
